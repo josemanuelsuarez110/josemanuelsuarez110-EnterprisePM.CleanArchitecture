@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_VERSION: 8.0.x
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Cache NuGet
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Restore
+        run: dotnet restore ProjectManagementERP.sln
+
+      - name: Build
+        run: dotnet build ProjectManagementERP.sln -c Release --no-restore
+
+      - name: Test
+        run: dotnet test ProjectManagementERP.sln -c Release --no-build --collect:"XPlat Code Coverage"
+
+      - name: Publish API artifact
+        run: dotnet publish src/API/ProjectManagementERP.API.csproj -c Release -o artifacts/api --no-build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-publish
+          path: artifacts/api
+
+  docker-image:
+    runs-on: ubuntu-latest
+    needs: build-test
+    if: github.event_name == 'push'
+    env:
+      IMAGE_NAME: enterprisepm-clean
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+          file: ./Dockerfile

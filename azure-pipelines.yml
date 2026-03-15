@@ -1,0 +1,36 @@
+trigger:
+- main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  buildConfiguration: "Release"
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: restore
+    projects: ProjectManagementERP.sln
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: build
+    projects: ProjectManagementERP.sln
+    arguments: "-c $(buildConfiguration)"
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: ProjectManagementERP.sln
+    arguments: "-c $(buildConfiguration) --collect:'XPlat Code Coverage'"
+
+- task: Docker@2
+  displayName: Build API image
+  inputs:
+    containerRegistry: "$(dockerRegistryServiceConnection)"
+    repository: "projectmanagementerp/api"
+    command: "buildAndPush"
+    Dockerfile: "$(Build.SourcesDirectory)/Dockerfile"
+    tags: |
+      $(Build.BuildId)

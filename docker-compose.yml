@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=ProjectManagementERP;User Id=sa;Password=Your_password123;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=False
+      - ConnectionStrings__Redis=redis:6379
+      - Jwt__Issuer=ProjectManagementERP
+      - Jwt__Audience=ProjectManagementERPClients
+      - Jwt__Secret=super-secret-change-me
+    depends_on:
+      - sqlserver
+      - redis
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Your_password123
+    ports:
+      - "1433:1433"
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

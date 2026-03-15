@@ -1,0 +1,47 @@
+## Build artifacts
+bin/
+obj/
+artifacts/
+**/bin/
+**/obj/
+
+# User-specific
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+.history/
+
+# Rider / ReSharper
+.idea/
+*.DotSettings.user
+
+# Logs
+*.log
+
+# Coverage
+TestResults/
+coverage*/
+*.coverage
+*.coveragexml
+
+# Docker
+*.pid
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Packages
+**/packages/
+*.nupkg
+
+# Secrets
+secrets.json
+
+# EF Core
+**/Migrations/obj/

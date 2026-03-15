@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.API", "src\API\ProjectManagementERP.API.csproj", "{53ef43ee-c1c8-49e1-a6ae-cf3420774377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.Application", "src\Application\ProjectManagementERP.Application.csproj", "{9377c430-65ec-427a-91c5-908b973e0e58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.Domain", "src\Domain\ProjectManagementERP.Domain.csproj", "{0d69cd27-4c08-4326-81d2-9dced046a7c2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.Infrastructure", "src\Infrastructure\ProjectManagementERP.Infrastructure.csproj", "{695b5a37-9fbb-4f39-aea3-a5724c776ed4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.Shared", "src\Shared\ProjectManagementERP.Shared.csproj", "{b9bb8b4c-cc2c-406e-a5f8-54d2d743495f}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.UnitTests", "tests\UnitTests\ProjectManagementERP.UnitTests.csproj", "{6b0ace7b-fe8d-4c99-ab6b-565785716a38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementERP.IntegrationTests", "tests\IntegrationTests\ProjectManagementERP.IntegrationTests.csproj", "{32425ecd-1b8b-4147-9590-6395ff1556f1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53ef43ee-c1c8-49e1-a6ae-cf3420774377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ef43ee-c1c8-49e1-a6ae-cf3420774377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ef43ee-c1c8-49e1-a6ae-cf3420774377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ef43ee-c1c8-49e1-a6ae-cf3420774377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9377c430-65ec-427a-91c5-908b973e0e58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9377c430-65ec-427a-91c5-908b973e0e58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9377c430-65ec-427a-91c5-908b973e0e58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9377c430-65ec-427a-91c5-908b973e0e58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0d69cd27-4c08-4326-81d2-9dced046a7c2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0d69cd27-4c08-4326-81d2-9dced046a7c2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0d69cd27-4c08-4326-81d2-9dced046a7c2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0d69cd27-4c08-4326-81d2-9dced046a7c2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695b5a37-9fbb-4f39-aea3-a5724c776ed4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695b5a37-9fbb-4f39-aea3-a5724c776ed4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695b5a37-9fbb-4f39-aea3-a5724c776ed4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695b5a37-9fbb-4f39-aea3-a5724c776ed4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{b9bb8b4c-cc2c-406e-a5f8-54d2d743495f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b9bb8b4c-cc2c-406e-a5f8-54d2d743495f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b9bb8b4c-cc2c-406e-a5f8-54d2d743495f}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{b9bb8b4c-cc2c-406e-a5f8-54d2d743495f}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6b0ace7b-fe8d-4c99-ab6b-565785716a38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6b0ace7b-fe8d-4c99-ab6b-565785716a38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6b0ace7b-fe8d-4c99-ab6b-565785716a38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6b0ace7b-fe8d-4c99-ab6b-565785716a38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32425ecd-1b8b-4147-9590-6395ff1556f1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32425ecd-1b8b-4147-9590-6395ff1556f1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32425ecd-1b8b-4147-9590-6395ff1556f1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32425ecd-1b8b-4147-9590-6395ff1556f1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

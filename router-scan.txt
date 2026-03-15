@@ -1,0 +1,24 @@
+# Nmap 7.98 scan initiated Sat Mar 14 23:37:05 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -sV -O --top-ports 50 -oN router-scan.txt 192.168.100.1
+Nmap scan report for 192.168.100.1
+Host is up (0.024s latency).
+Not shown: 45 closed tcp ports (reset)
+PORT   STATE    SERVICE  VERSION
+21/tcp filtered ftp
+22/tcp filtered ssh
+23/tcp open     telnet   Huawei Home Gateway telnetd
+53/tcp open     domain   (generic dns response: SERVFAIL)
+80/tcp open     ssl/http
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.98%I=7%D=3/14%Time=69B6296F%P=i686-pc-windows-windows%r(
+SF:DNSVersionBindReqTCP,20,"\0\x1e\0\x06\x81\x82\0\x01\0\0\0\0\0\0\x07vers
+SF:ion\x04bind\0\0\x10\0\x03");
+MAC Address: E4:2D:7B:A1:01:8F (China Mobile IOT Company Limited)
+Device type: general purpose
+Running: Linux 3.X
+OS CPE: cpe:/o:linux:linux_kernel:3.5
+OS details: Linux 3.5
+Network Distance: 1 hop
+Service Info: Device: broadband router
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 14 23:37:59 2026 -- 1 IP address (1 host up) scanned in 54.44 seconds

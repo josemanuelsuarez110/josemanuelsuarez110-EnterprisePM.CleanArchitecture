@@ -1,0 +1,23 @@
+Router (192.168.100.1) - notas de endurecimiento y verificación
+Fecha: 2026-03-14
+
+Resultados nmap actuales:
+- Puertos abiertos: 23/telnet (Huawei Home Gateway telnetd), 53/dns (SERVFAIL), 80/ssl-http.
+- Puertos filtrados: 21/ftp, 22/ssh.
+- Ruta hop: 1; OS: Linux 3.x
+
+Acciones recomendadas (prioridad):
+1) Desactivar Telnet en el router. Si necesitas CLI, habilita solo SSH con clave/contraseña robusta, limitado a LAN.
+2) Desactivar administración remota desde WAN; permitir solo en LAN. Usar HTTPS para la consola; cambiar usuario/clave admin por una larga y única.
+3) Wi-Fi: WPA2-AES o WPA3, desactivar WPS; usar contraseña larga; crear red de invitados si aplica.
+4) DNS (puerto 53): confirmar que solo atienda LAN y que no permita recursión abierta desde WAN.
+5) Servicios innecesarios: desactivar UPnP/IGD, Telnet, FTP, cualquier acceso por WAN que no uses.
+6) Firmware: actualizar a la última versión oficial del fabricante y reiniciar.
+7) Backup: exportar configuración antes de cambios (preferible cifrada, si el equipo lo soporta).
+8) Logs: habilitar y revisar logs de accesos desde WAN y cambios de config.
+
+Comandos de verificación:
+- Escaneo rápido tras cambios: nmap -sV -O --top-ports 100 192.168.100.1
+- Escaneo completo + scripts base: nmap -sV -sC -p- 192.168.100.1 -oN router-full.txt
+
+Ubicación del log previo: router-scan.txt

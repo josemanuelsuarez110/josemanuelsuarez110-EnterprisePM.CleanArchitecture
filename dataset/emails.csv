@@ -1,0 +1,6 @@
+label,text
+phishing,"Urgent: Your account has been suspended. Verify your information at http://fakebank.example/login to restore access."
+legitimate,"Hi team, attached is the agenda for tomorrow's meeting. Let me know if you have additions."
+phishing,"Security Alert: We noticed unusual sign-in attempts. Please confirm your identity by entering your password here: https://secure-check.example"
+legitimate,"Reminder: the quarterly report is due next Friday. Please upload to the shared drive."
+phishing,"Dear customer, you have won a prize! Click the link to claim now: http://win-big.example"
