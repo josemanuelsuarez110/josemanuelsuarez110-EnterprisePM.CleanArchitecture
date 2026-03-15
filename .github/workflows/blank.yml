@@ -45,6 +45,10 @@
           push: true
           tags: ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
           file: ./Dockerfile
+          git add .github/workflows/ci.yml
+git commit -m "Push images to GHCR and ACR"
+git push
+
 
       - name: Logout
         run: docker logout ${{ secrets.ACR_NAME }}.azurecr.io || true
